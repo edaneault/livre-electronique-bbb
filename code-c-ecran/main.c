@@ -13,7 +13,7 @@ int main(void)
         wsClear();
 
         for(int i = 0; i < 22; i++) {
-                wsDisplayText(0,i*28, "BAAAAAAAAABAAAAAAAAABAAAAAAAAABAAAAAAAAABAAAAAAAAABAAAAAAAAABAAAAAAAAABAAAAAAAAABAAAAAAAAABAAAAAAAAA", 100);
+                wsDisplayText(0,i*28, "Ceci est un livre electronique créé par des étudiants du Collège Maisonneuve", 100);
         }
 
         wsRefresh();
