@@ -1,0 +1,19 @@
+﻿Documentation projet E-Ink
+
+-Plusieurs solutions possible pour transférer des livres électronique sur le BBB.
+  La solution par transfert USB sera testée.
+
+Pour supprimer le mount automatique qui s’appelle BEAGLEBONE, il faut aller dans le repertoire boot et supprimer uns ligne. Cependant, cela va supprimer le <gadget serial> et le <RNDIS Ethernet>.
+
+Procédure:
+vim /opt/scripts/boot/am335x_evm.sh
+
+You could comment out line shown below, but it would disable gadget serial,
+as well as RNDIS Ethernet.
+
+#modprobe g_multi file=${gadget_partition} cdrom=0 stall=0 removable=1
+nofua=1 iSerialNumber=${SERIAL_NUMBER} iManufacturer=Circuitco
+iProduct=BeagleBone${BLACK} host_addr=${cpsw_1_mac}
+
+Autre lien montrant l’emplacement et une solution possible:
+https://stackoverflow.com/questions/33546269/how-can-beaglebone-black-be-used-as-mass-storage-device
