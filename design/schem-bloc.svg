@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="127.82024mm"
+   height="62.018978mm"
+   viewBox="0 0 127.82025 62.018978"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="schem-bloc.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-global="false"
+     inkscape:zoom="3.1108586"
+     inkscape:cx="299.43502"
+     inkscape:cy="198.65898"
+     inkscape:window-width="3840"
+     inkscape:window-height="2091"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker27930"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path27928" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker27902"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path27900" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker27892"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path27890" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker20608"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path20606" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path18716" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker19485"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path19483" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path18719" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-46.1197,-71.450357)">
+    <g
+       id="g18583"
+       transform="translate(-0.55234386)">
+      <text
+         xml:space="preserve"
+         style="font-style:italic;font-stretch:semi-condensed;font-size:4.23333px;line-height:1.25;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif Italic Semi-Condensed';font-variant-ligatures:none;stroke-width:0.264583"
+         x="105.78865"
+         y="131.30807"
+         id="text2762-84-4"><tspan
+           sodipodi:role="line"
+           id="tspan2760-3-9"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';stroke-width:0.264583"
+           x="105.78865"
+           y="131.30807">Batterie</tspan></text>
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+         id="rect18147-6"
+         width="17.531582"
+         height="7.0466533"
+         x="104.38672"
+         y="126.29039" />
+    </g>
+    <g
+       id="g18573"
+       transform="translate(-3.4914324,-0.12231445)">
+      <text
+         xml:space="preserve"
+         style="font-style:italic;font-stretch:semi-condensed;font-size:4.23333px;line-height:1.25;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif Italic Semi-Condensed';font-variant-ligatures:none;stroke-width:0.264583"
+         x="52.047417"
+         y="92.057663"
+         id="text2762-84"><tspan
+           sodipodi:role="line"
+           id="tspan2760-3"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';stroke-width:0.264583"
+           x="52.047417"
+           y="92.057663">Clavier Matriciel</tspan></text>
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.264582;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+         id="rect18147-5"
+         width="34.452854"
+         height="7.0466533"
+         x="49.743423"
+         y="87.014572" />
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker19485)"
+       d="m 80.704845,90.415584 24.929235,0"
+       id="path19481"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g18573"
+       inkscape:connection-end="#g19457" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker27930)"
+       d="m 119.56625,88.187902 29.89027,-9.558599"
+       id="path19751"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g19457"
+       inkscape:connection-end="#g18593" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker27892);marker-end:url(#marker27902)"
+       d="m 119.56625,91.874912 27.74219,5.811721"
+       id="path19753"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g19457"
+       inkscape:connection-end="#g18588" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="m 112.60017,93.938911 0,20.497749"
+       id="path19755"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g19457"
+       inkscape:connection-end="#g18578" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker20608)"
+       d="m 112.60017,121.48331 0,4.80708"
+       id="path19757"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g18578"
+       inkscape:connection-end="#g18583" />
+    <g
+       id="g19457">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+         id="rect18147"
+         width="13.932174"
+         height="7.0466533"
+         x="105.63408"
+         y="86.892258" />
+      <text
+         xml:space="preserve"
+         style="font-style:italic;font-stretch:semi-condensed;font-size:4.23333px;line-height:1.25;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif Italic Semi-Condensed';font-variant-ligatures:none;stroke-width:0.264583"
+         x="108.29063"
+         y="91.958633"
+         id="text2762"><tspan
+           sodipodi:role="line"
+           id="tspan2760"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';stroke-width:0.264583"
+           x="108.29063"
+           y="91.958633">BBB</tspan></text>
+    </g>
+    <g
+       id="g18578"
+       transform="translate(-1.5128379)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+         id="rect18147-2"
+         width="23.93902"
+         height="7.0466533"
+         x="102.14349"
+         y="114.43666" />
+      <text
+         xml:space="preserve"
+         style="font-style:italic;font-stretch:semi-condensed;font-size:4.23333px;line-height:1.25;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif Italic Semi-Condensed';font-variant-ligatures:none;stroke-width:0.264583"
+         x="103.66093"
+         y="119.06489"
+         id="text2762-84-4-2"><tspan
+           sodipodi:role="line"
+           id="tspan2760-3-9-0"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';stroke-width:0.264583"
+           x="103.66093"
+           y="119.06489">Régulateur</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-stretch:semi-condensed;font-size:2.46944px;line-height:1.25;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif Italic Semi-Condensed';font-variant-ligatures:none;stroke-width:0.264583"
+       x="90.202614"
+       y="89.314224"
+       id="text2762-84-8"><tspan
+         sodipodi:role="line"
+         id="tspan2760-3-7"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.46944px;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans Italic';stroke-width:0.264583"
+         x="90.202614"
+         y="89.314224">GPIO</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-stretch:semi-condensed;font-size:2.46944px;line-height:1.25;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif Italic Semi-Condensed';font-variant-ligatures:none;stroke-width:0.264583"
+       x="130.91684"
+       y="81.789902"
+       id="text2762-84-8-7"><tspan
+         sodipodi:role="line"
+         id="tspan2760-3-7-2"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.46944px;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans Italic';stroke-width:0.264583"
+         x="130.91684"
+         y="81.789902">GPIO</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-stretch:semi-condensed;font-size:2.46944px;line-height:1.25;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif Italic Semi-Condensed';font-variant-ligatures:none;stroke-width:0.264583"
+       x="114.29923"
+       y="104.81361"
+       id="text2762-84-8-72"><tspan
+         sodipodi:role="line"
+         id="tspan2760-3-7-26"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.46944px;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans Italic';stroke-width:0.264583"
+         x="114.29923"
+         y="104.81361">ALIM</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-stretch:semi-condensed;font-size:2.46944px;line-height:1.25;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif Italic Semi-Condensed';font-variant-ligatures:none;stroke-width:0.264583"
+       x="130.91684"
+       y="93.156578"
+       id="text2762-84-8-1"><tspan
+         sodipodi:role="line"
+         id="tspan2760-3-7-0"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.46944px;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans Italic';stroke-width:0.264583"
+         x="130.91684"
+         y="93.156578">UART</tspan></text>
+    <g
+       id="g18588">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.264584;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+         id="rect18147-64"
+         width="24.511124"
+         height="7.0466533"
+         x="147.30844"
+         y="96.730728" />
+      <text
+         xml:space="preserve"
+         style="font-style:italic;font-stretch:semi-condensed;font-size:4.23333px;line-height:1.25;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif Italic Semi-Condensed';font-variant-ligatures:none;stroke-width:0.264583"
+         x="149.02515"
+         y="102.19292"
+         id="text2762-8"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';stroke-width:0.264583"
+           x="149.02515"
+           y="102.19292"
+           id="tspan9289">Écran EInk</tspan></text>
+    </g>
+    <g
+       id="g18593">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.264584;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+         id="rect18147-9"
+         width="26.666981"
+         height="7.0466533"
+         x="147.14067"
+         y="71.582649" />
+      <text
+         xml:space="preserve"
+         style="font-style:italic;font-stretch:semi-condensed;font-size:4.23333px;line-height:1.25;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif Italic Semi-Condensed';font-variant-ligatures:none;stroke-width:0.264583"
+         x="149.02937"
+         y="76.600342"
+         id="text2762-84-6"><tspan
+           sodipodi:role="line"
+           id="tspan2760-3-8"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';stroke-width:0.264583"
+           x="149.02937"
+           y="76.600342">DELs status</tspan></text>
+    </g>
+  </g>
+</svg>
