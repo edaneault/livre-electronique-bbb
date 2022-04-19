@@ -19,9 +19,15 @@
 #define WS_FRAME_FOOTER3        0xC3
 #define WS_FRAME_FOOTER4        0x3C
 
+#define LENGTH_START 			0x00
+#define LENGTH_END 				0x00
+
 const char staticframe_handshake[] = {WS_FRAME_HEADER, 0x00, 0x09, 0x00, WS_FRAME_FOOTER1, WS_FRAME_FOOTER2, WS_FRAME_FOOTER3, WS_FRAME_FOOTER4, 0xAC};
 const char staticframe_refresh[]   = {WS_FRAME_HEADER, 0x00, 0x09, 0x0A, WS_FRAME_FOOTER1, WS_FRAME_FOOTER2, WS_FRAME_FOOTER3, WS_FRAME_FOOTER4, 0xA6};
 const char staticframe_clear[]     = {WS_FRAME_HEADER, 0x00, 0x09, 0x2E, WS_FRAME_FOOTER1, WS_FRAME_FOOTER2, WS_FRAME_FOOTER3, WS_FRAME_FOOTER4, 0x82};
+
+const char staticframe_image[]     = {WS_FRAME_HEADER, 0x00, 0x16, 0x70, LENGTH_START, 0x00, 0x00, 0x00, 0x50, 0x49, 0x43, 0x31, 0x2E, 0x62, 0x6D, 0x70,LENGTH_END, WS_FRAME_FOOTER1, WS_FRAME_FOOTER2, WS_FRAME_FOOTER3, WS_FRAME_FOOTER4,  };
+
 
 uint8_t XOR_checksum(char *frame, int length);
 
@@ -51,6 +57,11 @@ void wsClear(void)
 void wsRefresh(void)
 {
         write(tty, staticframe_refresh, 9);
+}
+
+void image_write(void)
+{
+		write(tty, staticframe_image, 22);
 }
 
 void wsDrawPoint(int x, int y)
@@ -140,3 +151,4 @@ uint8_t XOR_checksum(char *frame, int length)
 
         return xor;
 }
+ 
