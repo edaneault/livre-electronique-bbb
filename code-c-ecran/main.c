@@ -15,6 +15,8 @@ int main(void)
         image_write();
 
         wsRefresh();
+        
+        lookatmicrosd();
 
         return 0;
 }
