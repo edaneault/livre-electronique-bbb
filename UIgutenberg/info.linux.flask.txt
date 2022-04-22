@@ -1,0 +1,2 @@
+1/ utiliser la commande source bin/activate pour lancer l'environnement virtuel 
+2/ entrer la commande FLASK_FETCH=app.py flask run pour lancer le server 

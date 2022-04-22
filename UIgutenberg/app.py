@@ -1,6 +1,7 @@
 from flask import Flask 
 from flask import render_template
-import urllib.request
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
@@ -9,7 +10,19 @@ app = Flask(__name__)
 def index():
 
     
-    request_url = urllib.request.urlopen('https://gutenberg.org/ebooks/search/?query=&submit_search=Go%21')
-    URL = request_url.read()q
+
     
-    return render_template('index.html', title='Welcome', code=request_url)
+
+    with urlopen("https://gutenberg.org/files/2701/2701-h/2701-h.htm") as response:
+        body = response.read()
+
+    # Parse the html file
+    soup = BeautifulSoup(body, 'html.parser')
+
+    # Format the parsed html file
+    strhtm = soup.getText()
+
+
+
+
+    return render_template('index.html', Page_title='UIGutenberg', Book_title=strhtm, code=body)
