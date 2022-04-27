@@ -10,13 +10,13 @@ int main(void)
                 printf("Awww\n");
         }
 
+        lookatmicrosd();
+
         wsClear();
 
         image_write();
 
         wsRefresh();
         
-        lookatmicrosd();
-
         return 0;
 }
