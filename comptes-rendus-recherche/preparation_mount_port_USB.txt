@@ -35,11 +35,11 @@ Le BBB doit deja être connecté en ssh car, les étapes à suivre se font sur l
 
 7)	Dans l'editeur texte, allez à la derniere ligne (une ligne vide) est écrire vos informations avec le format suivant et enregistrez:
 	
-	/dev/disk/by-path/[votre id trouvé à l'étape 5.1] [chemin destination crée à l'étape 2] auto defaults,user 0 0
+	/dev/disk/by-path/[votre id trouvé à l'étape 5.1] [chemin destination crée à l'étape 2] auto defaults,nofail 0 0
 	
 	voici une exemple concret:
 	
-	/dev/disk/by-path/pci-0000:00:06.0-usb-0:2:1.0-scsi-0:0:0:0-part1 /home/debian/USB auto defaults,user 0 0
+	/dev/disk/by-path/pci-0000:00:06.0-usb-0:2:1.0-scsi-0:0:0:0-part1 /home/debian/USB auto defaults,nofail 0 0
 
 	*attention aux espaces! car si le fichier fstab est mal configuré, le Beaglebone ne va pas demarrer. Il faudra y acceder par linux
 	pour changer le fichier fstab.

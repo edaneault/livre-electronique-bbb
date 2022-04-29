@@ -14,12 +14,12 @@ import os
 import time
 
 temps_attente_boucle = 10									#variable dans laquelle on controle la frequence (en sec) à laquelle on un tour de boucle
-type_de_fichier = "*.txt"									#Variable pour contrôler le type de fichier qu'on veut copier: txt, jpge, png, csv, etc...
+type_de_fichier = '.txt', '.pdf', '.epub'							#Variable pour contrôler le type de fichier qu'on veut copier: txt, jpge, png, csv, etc...
 
 def creation_liste(chemin, extension, tableau):							#Fonction qu'on va appeler pour creer nos listes qui serviront à copier des fichiers de façon selective
 	liste_base = os.listdir(chemin)								#Cree une liste de absolument tout (fichier et dossier) ce qui se trouve dans chemin
 	for entree in liste_base:								#Enumere chaque valeur de la liste crée
-		if fnmatch.fnmatch(entree, extension):						#Compare si le fichier enumeré correspond au type de fichier souhaité
+		if entree.endswith(extension):							#Compare si le fichier enumeré correspond au type de fichier souhaité
 			tableau.append(entree)							#Si le fichier correspond à notre type d'extension, on le rentre dans notre tableau
 		tableau.sort()									#On met notre liste en ordre alphabetique
 	#print(tableau)										#print pour debug
