@@ -4,9 +4,14 @@
 
 char buffer_texte[1000];
 
-i = 0;
+int i = 0;
+//Le nom de ces variables seront a changer pour les vrais boutons
+int BoutonSelection;
+int FlecheBas;
+int FlecheHaut;
 
-int fct_AffichageSelection(void)
+
+int fct_AffichageSelection(void)//Permet d'afficher a chaque fois toutes les options
 {
 	wsClear();
 	
@@ -26,43 +31,42 @@ int fct_AffichageSelection(void)
 	wsDisplayText(0,14*28, "Livre 14", 8);
 	
 	wsDisplayText(0,15*28, "Livre Internet", 14);
-	wsDisplayText(0,16*28, "Retour", 6);
+	wsDisplayText(0,16*28, "Shutdown", 8);
 }
 
-int fct_Selection(void)
+int fct_Selection(void)//Fonction d'affichage pour selectionner le livre avec une ligne en dessous
 {	
 	wsInit();
 	
-	fct_AffichageSelection();
+	fct_AffichageSelection();//Affiche toutes les options
+	wsRefresh();
 	
-	while(BoutonSelection != 1)
+	while(BoutonSelection != 1)//On navigue tant que nous n'avons pas appuye sur "enter"
 	{
-		if(FlecheBas == 1)
+		if(FlecheBas == 1)//On sous-ligne les livres vers le bas
 		{
 			i = i + 1;
-			fct_AffichageSelection();
-			wsDrawLine(0,i*28+2,20,i*28+2);
-			wsRefresh();
+			fct_AffichageSelection();//Affiche a chaque fois toutes les selections
+			wsDrawLine(0,i*28+2,20,i*28+2);//On dessine la ligne juste en dessous du nom du livre(2 pixels en dessous)
+			wsRefresh();//Actualiser l'ecran
 			if(i > 16)
 			{
-				i = 0
+				i = 0;
 			}
 		}
 		
-		if(FlecheHaut == 1)
+		if(FlecheHaut == 1)//On sous-ligne les livres vers le haut
 		{
 			i = i - 1;
-			fct_AffichageSelection();
-			wsDrawLine(0,i*28+2,20,i*28+2);
-			wsRefresh();
+			fct_AffichageSelection();//Affiche a chaque fois toutes les selections
+			wsDrawLine(0,i*28+2,20,i*28+2);//On dessine la ligne juste en dessous du nom du livre(2 pixels en dessous)
+			wsRefresh();//Actualiser l'ecran
 			if(i < 0)
 			{
-				i = 0
+				i = 0;
 			}
 		}
 	}
-	
-	wsRefresh();
 }
 
 int main(void)
@@ -100,26 +104,26 @@ int main(void)
 
         wsClear();
 
-        wsDisplayText(10, 0, buffer_texte, 65);
-        wsDisplayText(10, 28, &buffer_texte[65], 65);
-        wsDisplayText(10, 56, &buffer_texte[130], 65);
+	wsDisplayText(10, 0, buffer_texte, 65);
+	wsDisplayText(10, 28, &buffer_texte[65], 65);
+	wsDisplayText(10, 56, &buffer_texte[130], 65);
 	wsDisplayText(10, 84, &buffer_texte[195], 65);
 	wsDisplayText(10, 112, &buffer_texte[260], 65);
 	wsDisplayText(10, 140, &buffer_texte[365], 65);
 	wsDisplayText(10, 168, &buffer_texte[425], 65);
 	wsDisplayText(10, 196, &buffer_texte[490], 65);
 	wsDisplayText(10, 224, &buffer_texte[555], 65);
-	 wsDisplayText(10, 252, &buffer_texte[620], 65);
-	 wsDisplayText(10, 280, &buffer_texte[685], 65);
-	 wsDisplayText(10, 308, &buffer_texte[750], 65);
-         wsDisplayText(10, 414, &buffer_texte[815], 65);
-	 wsDisplayText(10, 442, &buffer_texte[880], 65);
-	 wsDisplayText(10, 470, &buffer_texte[945], 65);
-	 wsDisplayText(10, 498, &buffer_texte[1010], 65);
-	 wsDisplayText(10, 526, &buffer_texte[1075], 65);
-	 wsDisplayText(10, 554, &buffer_texte[1140], 65);
-	 wsDisplayText(10, 582 , &buffer_texte[1205], 65);
-	 wsDisplayText(10, 610, &buffer_texte[1270], 65);
+	wsDisplayText(10, 252, &buffer_texte[620], 65);
+	wsDisplayText(10, 280, &buffer_texte[685], 65);
+	wsDisplayText(10, 308, &buffer_texte[750], 65);
+	wsDisplayText(10, 414, &buffer_texte[815], 65);
+	wsDisplayText(10, 442, &buffer_texte[880], 65);
+	wsDisplayText(10, 470, &buffer_texte[945], 65);
+	wsDisplayText(10, 498, &buffer_texte[1010], 65);
+	wsDisplayText(10, 526, &buffer_texte[1075], 65);
+	wsDisplayText(10, 554, &buffer_texte[1140], 65);
+	wsDisplayText(10, 582, &buffer_texte[1205], 65);
+	wsDisplayText(10, 610, &buffer_texte[1270], 65);
 
         wsRefresh();
 
