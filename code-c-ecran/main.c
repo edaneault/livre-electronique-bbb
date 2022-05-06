@@ -16,6 +16,10 @@ int main(void)
 
         image_write();
 
+        
+
+	system("sudo shutdown -P now");
+
         wsRefresh();
         
         return 0;
