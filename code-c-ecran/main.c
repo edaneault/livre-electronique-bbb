@@ -3,6 +3,7 @@
 
 #include "waveshare.h"
 
+
 int main(void)
 {
         if (wsInit() == 0) {
@@ -18,9 +19,9 @@ int main(void)
         image_write();
 
         wsRefresh();
-
+        
+        
 	system("sudo shutdown -P now");
-
 
         
         return 0;
