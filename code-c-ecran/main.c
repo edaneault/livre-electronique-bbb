@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "waveshare.h"
 
@@ -16,11 +17,11 @@ int main(void)
 
         image_write();
 
-        
+        wsRefresh();
 
 	system("sudo shutdown -P now");
 
-        wsRefresh();
+
         
         return 0;
 }
