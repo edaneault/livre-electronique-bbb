@@ -1,4 +1,5 @@
 #NOM: Rubino Sebastian et Simon Lachapelle
+
 #COURS: systemes d'exp
 #ENSEIGNANT: Emile Daneault
 #DESCRIPTION: 	ce code permet deux choses importantes pour le projet final. Premierement, avec les manipulations decrites dans le fichier "preparation_mount_port_USB",
