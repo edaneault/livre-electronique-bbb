@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 #include "waveshare.h"
-
 char buffer_texte[1000];
+
 
 int i = 0;
 //Le nom de ces variables seront a changer pour les vrais boutons
@@ -15,23 +15,23 @@ int fct_AffichageSelection(void)//Permet d'afficher a chaque fois toutes les opt
 {
 	wsClear();
 	
-	wsDisplayText(0,1*28, "Livre 01", 8);
-	wsDisplayText(0,2*28, "Livre 02", 8);
-	wsDisplayText(0,3*28, "Livre 03", 8);
-	wsDisplayText(0,4*28, "Livre 04", 8);
-	wsDisplayText(0,5*28, "Livre 05", 8);
-	wsDisplayText(0,6*28, "Livre 06", 8);
-	wsDisplayText(0,7*28, "Livre 07", 8);
-	wsDisplayText(0,8*28, "Livre 08", 8);
-	wsDisplayText(0,9*28, "Livre 09", 8);
-	wsDisplayText(0,10*28, "Livre 10", 8);
-	wsDisplayText(0,11*28, "Livre 11", 8);
-	wsDisplayText(0,12*28, "Livre 12", 8);
-	wsDisplayText(0,13*28, "Livre 13", 8);
-	wsDisplayText(0,14*28, "Livre 14", 8);
+	wsDisplayText(0,1*34, "Livre 01", 8);
+	wsDisplayText(0,2*34, "Livre 02", 8);
+	wsDisplayText(0,3*34, "Livre 03", 8);
+	wsDisplayText(0,4*34, "Livre 04", 8);
+	wsDisplayText(0,5*34, "Livre 05", 8);
+	wsDisplayText(0,6*34, "Livre 06", 8);
+	wsDisplayText(0,7*34, "Livre 07", 8);
+	wsDisplayText(0,8*34, "Livre 08", 8);
+	wsDisplayText(0,9*34, "Livre 09", 8);
+	wsDisplayText(0,10*34, "Livre 10", 8);
+	wsDisplayText(0,11*34, "Livre 11", 8);
+	wsDisplayText(0,12*34, "Livre 12", 8);
+	wsDisplayText(0,13*34, "Livre 13", 8);
+	wsDisplayText(0,14*34, "Livre 14", 8);
 	
-	wsDisplayText(0,15*28, "Livre Internet", 14);
-	wsDisplayText(0,16*28, "Shutdown", 8);
+	wsDisplayText(0,15*34, "Livre Internet", 14);
+	wsDisplayText(0,16*34, "Shutdown", 8);
 }
 
 int fct_Selection(void)//Fonction d'affichage pour selectionner le livre avec une ligne en dessous
@@ -39,6 +39,8 @@ int fct_Selection(void)//Fonction d'affichage pour selectionner le livre avec un
 	wsInit();
 	
 	fct_AffichageSelection();//Affiche toutes les options
+	wsDrawLine(0,1*34+2,20,1*34+2);
+	
 	wsRefresh();
 	
 	while(BoutonSelection != 1)//On navigue tant que nous n'avons pas appuye sur "enter"
@@ -47,7 +49,7 @@ int fct_Selection(void)//Fonction d'affichage pour selectionner le livre avec un
 		{
 			i = i + 1;
 			fct_AffichageSelection();//Affiche a chaque fois toutes les selections
-			wsDrawLine(0,i*28+2,20,i*28+2);//On dessine la ligne juste en dessous du nom du livre(2 pixels en dessous)
+			wsDrawLine(0,i*34+2,20,i*34+2);//On dessine la ligne juste en dessous du nom du livre(2 pixels en dessous)
 			wsRefresh();//Actualiser l'ecran
 			if(i > 16)
 			{
@@ -59,7 +61,7 @@ int fct_Selection(void)//Fonction d'affichage pour selectionner le livre avec un
 		{
 			i = i - 1;
 			fct_AffichageSelection();//Affiche a chaque fois toutes les selections
-			wsDrawLine(0,i*28+2,20,i*28+2);//On dessine la ligne juste en dessous du nom du livre(2 pixels en dessous)
+			wsDrawLine(0,i*34+2,20,i*34+2);//On dessine la ligne juste en dessous du nom du livre(2 pixels en dessous)
 			wsRefresh();//Actualiser l'ecran
 			if(i < 0)
 			{
@@ -68,7 +70,6 @@ int fct_Selection(void)//Fonction d'affichage pour selectionner le livre avec un
 		}
 	}
 }
-
 int main(void)
 {
 
@@ -124,6 +125,7 @@ int main(void)
 	wsDisplayText(10, 554, &buffer_texte[1140], 65);
 	wsDisplayText(10, 582, &buffer_texte[1205], 65);
 	wsDisplayText(10, 610, &buffer_texte[1270], 65);
+
 
         wsRefresh();
 
