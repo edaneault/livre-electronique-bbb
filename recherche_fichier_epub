@@ -2,9 +2,9 @@ Definition:
 
 An EPUB file (short for electronic publication) is in the Open eBook file format. You can download EPUB files and read them on your smartphone, tablet, e-reader, or computer. This freely available eBook standard supports more hardware eBook readers than any other file format.
 
-How to open a .epug file:
+How to open a .epub file:
 
-De ce que jai lu, par default, notre ordinateur ne peut pas lire des fichiers .epug. Il existe plusieurs applications nous permettant de lire ce genre de fichiers. Les plus populaires sont calibre et fbreader.(sudo apt-get install fbreader)
+De ce que jai lu, par default, notre ordinateur ne peut pas lire des fichiers .epub. Il existe plusieurs applications nous permettant de lire ce genre de fichiers. Les plus populaires sont calibre et fbreader.(sudo apt-get install fbreader)
 
 La marche a suivre est presente dans le lien ci-dessous.
 
