@@ -1,1 +1,0 @@
-Tout ce qu'il reste à faire avec les boutons est de relier une pin d'un des boutons au GND et faire un beau case imprimé en 3D.
