@@ -1,2 +1,0 @@
-1/ utiliser la commande source bin/activate depuis de repertoire "flask"
-2/ entrer la commande FLASK_FETCH=app.py flask run pour lancer le server 
