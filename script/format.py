@@ -1,9 +1,24 @@
-#Description: 	Ce script, qui est à sa première version, a comme fonction de donner
-#		un nouveau format à un fichier afin de respecter les besoins d'un écran.
-#		En termes simples, ce script compte la quantité de caracteres dans chaque mot
-#		et determine, à l'aide d'une variable "limite", si ce mot peut être ajouté
-#		ou si ce mot doit passer à la ligne suivante.
-
+# Description: 	
+#
+# Ce script comme fonction de donner un nouveau format à un fichier afin de respecter les besoins d'un écran.
+# En termes simples, ce script compte la quantité de caracteres dans chaque mot
+# et determine, à l'aide d'une variable "limite", si ce mot peut être ajouté
+# ou si ce mot doit passer à la ligne suivante.
+#
+# Le script dans ça version courante est capable de faire les fonctions suivantes:
+# 	- Lire le contenu d'un fichier .txt
+# 	- Limiter la quantité de mots par ligne selon la valeur max voulue par l'usager.
+# 	- Éviter de couper des mots en plein milieu de phrase.
+# 	- Tenir compte des espaces.
+# 	
+# Le script ne peut pas:
+# 	- Differencier les titres et les sous titres.
+# 	- Remplacer les caractères spéciaux (é,ç,î, etc).
+# 
+# À vérifier:
+# 	-	les types de fichiers qui peuvent être traités
+# 	-	la limite de caractères que l'écran peut supporter par ligne
+# 	
 
 fichier_lecture = "/home/debian/explotation/testing local/test.txt"
 A = open(fichier_lecture, 'r')
@@ -35,5 +50,3 @@ for e in liste:					#boucle qui va traiter chaque mot avec son espace respectif
 		somme_char = 0 + val_ajoute	#on remet à zero notre compteur de caracteres en ajoutant la quantité de lettres du mot en nouvelle ligne
 
 print(liste_b)
-
-	
