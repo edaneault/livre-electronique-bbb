@@ -1,7 +1,0 @@
-Clé USB 
-
-Nous avons créer un script qui permet de copier des fichiers .txt d'une clé usb vers un folder local. 
-Le script crée aussi des mounts continuellement, car à chaque fois qu'on débranche la clé USB, le mount disparaît. 
-Donc le script fait ensorte que le mount se met à jour à chaque tout de la boucle while. 
-Aussi ce qui est important de mentioonner, c'est que le mount est fait sur un port USB et non pas sur une clé USB parce que chaque clé va avoir son propre uuid( comme une adresse unique ).
-Le scipt fait aussi lire un fichier de configuration qui se trouve dans /etc. Ce fichier indique où il doit aller copier le chemin pour le folder source 
