@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "waveshare.h"
+
 
 int main(void)
 {
@@ -10,37 +12,21 @@ int main(void)
                 printf("Awww\n");
         }
 
-        FILE *fp;
-        char c;
-        int n = 0;
-
-        fp = fopen("book_to_read.txt","r");
-
-        if(fp == NULL) {
-		perror("Error in opening file");
-		return(-1);
-	}
-
-	for(int a = 0; a < 1000; a++) {
-	      c = fgetc(fp);
-	      if( feof(fp) ) {
-	           break ;
-	      }
-
-	      //printf("%c", c);
-
-	      buffer_texte[a] = c;
-        }
-
-        fclose(fp);
+        // Determine lieu de sauvegarde de l'image de mise en veille.
+        lookatmicrosd();
 
         wsClear();
-
-        wsDisplayText(10, 0, buffer_texte, 60);
-        wsDisplayText(10, 28, &buffer_texte[60], 60);
-        wsDisplayText(10, 56, &buffer_texte[120], 60);
+        
+        
+        // Permet l'affichage de l'image de mise en veille.
+        image_write();
 
         wsRefresh();
+        
+        // Evaluer la possibilite d'insertion d'un delai.
+        
+	system("sudo shutdown -P now");
 
+        
         return 0;
 }
