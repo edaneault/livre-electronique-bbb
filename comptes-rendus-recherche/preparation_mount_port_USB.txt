@@ -1,0 +1,52 @@
+AUTEUR: RUBINO SEBASTIAN
+
+ATTENTION: Les manipulations qui suivent doivent se faire avant de lancer le script.
+Ces instructions indiquent étape par étape les manipulations à faire pour créer avec succes
+un dossier local dans lequel le mount de n'importe quelle clé usb pourra se créer. 
+Le BBB doit deja être connecté en ssh car, les étapes à suivre se font sur le BBB.
+
+
+1) 	Creer un dossier (source) dans lequel vous allez faire un mount. Ce dossier doit pouvoir être traité sans sudo.
+	Idealement, ce dossier doit être facile d'y acceder.
+	exemple: usb, usb_mount, usb_source, etc.
+	
+2)	(Si pas fait) Creer un autre dossier (destination) dans lequel vous allez eventuellement copier vos fichiers dans un dossier
+	de lecture local. C'est ici que l'application qui va afficher les caracteres sur l'ecran va venir chercher
+	les livres. Encore une fois, faire un dossier facil d'access et qui n'a pas besoin de l'autorisation root.
+	exemple:  usb_destination, dossier_lecture, livres, etc.
+	
+2.1)	Mettre à jour les chemins dans le script python (source et destination) aux lignes 36 et 37. Cette étape peut se faire à la fin.
+	
+3)	Connecter une clé usb (idéalement vide) dans le port usb et attendre quelques secondes avant de faire l'étape 4.
+
+4)	Sur le terminal, faire la commande suivante: sudo blkid
+
+4.1)	Trouver la partition dans laquelle se situe notre cle usb. Normalement, cette partition change à chaque
+	nouvelle connection donc, n'ayez pas peur de recommencer l'étape 3 si jamais vous êtes dans le doute.
+	exemple: /dev/sda1, /dev/sdb2, etc
+
+5)	Sur le terminal, faire la commande suivante: udevadm info --name=/dev/[la partition trouvé au 4.1] | grep disk/by-path
+
+5.1)	Sur la ligne S, copier le id de la plateforme du port USB.
+	exemple: < S: disk/by-path/pci-0000:00:06.0-usb-0:2:1.0-scsi-0:0:0:0-part1 >
+	La partie qui nous interese, c'est: pci-0000:00:06.0-usb-0:2:1.0-scsi-0:0:0:0-part1
+	
+6)	Sur le terminal, faire: sudo nano /etc/fstab
+
+7)	Dans l'editeur texte, allez à la derniere ligne (une ligne vide) est écrire vos informations avec le format suivant et enregistrez:
+	
+	/dev/disk/by-path/[votre id trouvé à l'étape 5.1] [chemin destination crée à l'étape 2] auto defaults,nofail 0 0
+	
+	voici une exemple concret:
+	
+	/dev/disk/by-path/pci-0000:00:06.0-usb-0:2:1.0-scsi-0:0:0:0-part1 /home/debian/USB auto defaults,nofail 0 0
+
+	*attention aux espaces! car si le fichier fstab est mal configuré, le Beaglebone ne va pas demarrer. Il faudra y acceder par linux
+	pour changer le fichier fstab.
+
+8)	Faites un redemarrage de votre systeme. Vous pouvez faire: sudo reboot
+
+9)	C'est prêt! vous êtes prêt à connecter une clé usb avec des fichiers.
+
+
+EN CAS DE DOUTE, NE PAS MODIFIER LE SCRIPT NI LES ETAPES. CONSULTEZ L'AUTEUR POUR TOUTE QUESTION.
