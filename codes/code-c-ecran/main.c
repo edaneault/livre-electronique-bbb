@@ -35,8 +35,6 @@ int fct_AffichageSelection(void)//Permet d'afficher a chaque fois toutes les opt
 
 int fct_Selection(void)//Fonction d'affichage pour selectionner le livre avec une ligne en dessous
 {	
-	wsInit();
-	
 	fct_AffichageSelection();//Affiche toutes les options
 	wsDrawLine(0,1*34+2,20,1*34+2);
 	
@@ -72,14 +70,23 @@ int fct_Selection(void)//Fonction d'affichage pour selectionner le livre avec un
 
 int main(void)
 {
-
-	fct_Selection(); //Fonction d'affichage pour selectionner le livre
-
         if (wsInit() == 0) {
                 printf("Yeah\n");
         } else {
                 printf("Awww\n");
         }
+
+	wsClear();
+	wsDisplayText(180, 180, "Livre 1", 7);
+	wsDrawCircle(218, 230, 15);
+	wsDisplayText(520, 180, "Livre 2", 7);
+	wsDrawCircle(558, 230, 15);
+	wsDisplayText(340, 250, "Eteindre", 8);
+	wsDrawCircle(390, 300, 15);
+	wsRefresh();
+
+
+	while(1);
 
         // Determine lieu de sauvegarde de l'image de mise en veille.
         lookatmicrosd();
