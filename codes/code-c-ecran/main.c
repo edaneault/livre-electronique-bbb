@@ -1,81 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
+#include <ctype.h>
+#include <unistd.h>
 #include "waveshare.h"
-char buffer_texte[1000];
 
-int i = 0;
-//Le nom de ces variables seront a changer pour les vrais boutons
-int BoutonSelection;
-int FlecheBas;
-int FlecheHaut;
+#define GPIO_INFO_SIZE 13 
+static const char GPIO_INFO_PATH[] = "/tmp/info-GPIO";
 
-int fct_AffichageSelection(void)//Permet d'afficher a chaque fois toutes les options
+char gpioData[GPIO_INFO_SIZE + 1];
+char oldGpioData[GPIO_INFO_SIZE + 1];
+
+#define BOUTON_ARRIERE 1
+#define BOUTON_GO 2
+#define BOUTON_AVANT 3
+#define BOUTON_AUCUN 0
+
+#define NB_COLONNES_TEXTE       65
+#define NB_LIGNES_TEXTE         65
+
+#define HAUTEUR_LIGNE_PIXEL     25
+
+int obtenirInfoGPIO(void)
 {
-	wsClear();
-	
-	wsDisplayText(0,1*34, "Livre 01", 8);
-	wsDisplayText(0,2*34, "Livre 02", 8);
-	wsDisplayText(0,3*34, "Livre 03", 8);
-	wsDisplayText(0,4*34, "Livre 04", 8);
-	wsDisplayText(0,5*34, "Livre 05", 8);
-	wsDisplayText(0,6*34, "Livre 06", 8);
-	wsDisplayText(0,7*34, "Livre 07", 8);
-	wsDisplayText(0,8*34, "Livre 08", 8);
-	wsDisplayText(0,9*34, "Livre 09", 8);
-	wsDisplayText(0,10*34, "Livre 10", 8);
-	wsDisplayText(0,11*34, "Livre 11", 8);
-	wsDisplayText(0,12*34, "Livre 12", 8);
-	wsDisplayText(0,13*34, "Livre 13", 8);
-	wsDisplayText(0,14*34, "Livre 14", 8);
-	
-	wsDisplayText(0,15*34, "Livre Internet", 14);
-	wsDisplayText(0,16*34, "Shutdown", 8);
-}
+        int ret;
 
-int fct_Selection(void)//Fonction d'affichage pour selectionner le livre avec une ligne en dessous
-{	
-	fct_AffichageSelection();//Affiche toutes les options
-	wsDrawLine(0,1*34+2,20,1*34+2);
-	
-	wsRefresh();
-	
-	while(BoutonSelection != 1)//On navigue tant que nous n'avons pas appuye sur "enter"
-	{
-		if(FlecheBas == 1)//On sous-ligne les livres vers le bas
-		{
-			i = i + 1;
-			fct_AffichageSelection();//Affiche a chaque fois toutes les selections
-			wsDrawLine(0,i*34+2,20,i*34+2);//On dessine la ligne juste en dessous du nom du livre(2 pixels en dessous)
-			wsRefresh();//Actualiser l'ecran
-			if(i > 16)
-			{
-				i = 0;
-			}
-		}
-		
-		if(FlecheHaut == 1)//On sous-ligne les livres vers le haut
-		{
-			i = i - 1;
-			fct_AffichageSelection();//Affiche a chaque fois toutes les selections
-			wsDrawLine(0,i*34+2,20,i*34+2);//On dessine la ligne juste en dessous du nom du livre(2 pixels en dessous)
-			wsRefresh();//Actualiser l'ecran
-			if(i < 0)
-			{
-				i = 0;
-			}
-		}
+        FILE *fGPIOInfo = fopen(GPIO_INFO_PATH, "r");
+        if (fGPIOInfo == NULL) {
+                return -1;
+        }
+
+        ret = fread(gpioData, sizeof(char), GPIO_INFO_SIZE, fGPIOInfo);
+	if (ret == EOF) {
+		return -1;
+	}
+
+        ret = fclose(fGPIOInfo);
+	if (ret == EOF) {
+		return -1;
 	}
 }
 
-int main(void)
+void dessinerChoixAccueil(void)
 {
-        if (wsInit() == 0) {
-                printf("Yeah\n");
-        } else {
-                printf("Awww\n");
-        }
-
 	wsClear();
 	wsDisplayText(180, 180, "Livre 1", 7);
 	wsDrawCircle(218, 230, 15);
@@ -84,25 +51,122 @@ int main(void)
 	wsDisplayText(340, 250, "Eteindre", 8);
 	wsDrawCircle(390, 300, 15);
 	wsRefresh();
+}
 
+int obtenirAction(void)
+{
+	int ret;
 
-	while(1);
+	// Tant que les données sont vieilles, réessayer de les lire
+	do {
+		ret = obtenirInfoGPIO();
+		if (ret < 0) {
+			printf("Erreur : Impossible d'acceder au fichier info\n");
+			exit(-1);
+		}
+	} while(strcmp(gpioData, oldGpioData) == 0);
 
-        // Determine lieu de sauvegarde de l'image de mise en veille.
+	strcpy(oldGpioData, gpioData);
+
+	if (gpioData[6] == '1') {
+		return BOUTON_ARRIERE;
+	} else if (gpioData[9] == '1') {
+		return BOUTON_GO;
+	} else if (gpioData[12] == '1') {
+		return BOUTON_AVANT;
+	} else {
+		return BOUTON_AUCUN;
+	}
+}
+
+void afficherPage(char *cheminLivre)
+{
+	wsClear();
+
+	FILE *fLivre;
+	fLivre = fopen(cheminLivre,"r");
+	if(fLivre == NULL) {
+		printf("Erreur : Impossible d'acceder au livre\n");
+		exit(-1);
+	}
+
+	char tamponPage[NB_COLONNES_TEXTE+10] = {0};
+
+	for(int i = 0; i < NB_LIGNES_TEXTE; i++) {
+		// On continue pour 10 caractères pour attraper les newlines 
+		fgets(tamponPage, NB_COLONNES_TEXTE+10, fLivre);
+
+		// On retire tout ce qui n'est pas affichable pour ne pas mélanger écran
+		for(int j = 0; j < NB_COLONNES_TEXTE + 10; j++) {
+			if(isprint(tamponPage[j]) == 0) {
+				tamponPage[j] = ' ';
+			}
+		}
+
+		wsDisplayText(0, i*HAUTEUR_LIGNE_PIXEL, tamponPage, 65);
+
+		memset(tamponPage, '\0', NB_COLONNES_TEXTE+10);
+
+		if(feof(fLivre)) {
+		     break ;
+		}
+	}
+
+	wsRefresh();
+
+	fclose(fLivre);
+}
+
+void eteindre(void)
+{
+        wsClear();
+
+        // Configurer écran pour lire microsd
         lookatmicrosd();
 
-        wsClear();
-        
-        
-        // Permet l'affichage de l'image de mise en veille.
+	// Afficher image par défaut
         image_write();
-
         wsRefresh();
         
-        // Evaluer la possibilite d'insertion d'un delai.
-        
+	// Éteindre le système
 	system("sudo shutdown -P now");
+}
 
-        
+int main(void)
+{
+	int ret;
+	gpioData[GPIO_INFO_SIZE] = '\0';
+	oldGpioData[GPIO_INFO_SIZE] = '\0';
+
+        if (wsInit() == 0) {
+                printf("Yeah\n");
+        } else {
+                printf("Awww\n");
+        }
+
+	dessinerChoixAccueil();
+
+	while(1) {
+		int action = obtenirAction();
+
+		switch (action) {
+			case BOUTON_ARRIERE:
+				fpos_t positionLecture;
+				afficherPage("/home/debian/livres/livre1.txt");
+				break;
+
+			case BOUTON_GO:
+				eteindre();
+				break;
+
+			case BOUTON_AVANT:
+				break;
+
+			case BOUTON_AUCUN: // Fallthrough
+			default:
+				break;
+		}
+	}
+
         return 0;
 }
