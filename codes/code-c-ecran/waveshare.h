@@ -7,6 +7,7 @@ void wsRefresh(void);
 void image_write(void);
 void wsDrawPoint(int x, int y);
 void wsDrawLine(int x1, int y1, int x2, int y2);
+void wsDrawCircle(int x, int y, int r);
 void wsDisplayText(int posx, int posy, char text[], int length);
 void lookatmicrosd(void);
 

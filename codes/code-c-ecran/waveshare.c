@@ -122,6 +122,34 @@ void wsDrawLine(int x1, int y1, int x2, int y2)
         write(tty, frame, frameLength);
 }
 
+void wsDrawCircle(int x, int y, int r)
+{
+        const int frameLength = 15;
+        char frame[] = {WS_FRAME_HEADER, 0x00, frameLength, 0x26, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, WS_FRAME_FOOTER1, WS_FRAME_FOOTER2, WS_FRAME_FOOTER3, WS_FRAME_FOOTER4, 0x00};
+
+        // Vérifier limites
+        if ((x < 0) || (x > WS_X_RES) || (y < 0) || (y > WS_Y_RES)) {
+		printf("lelelele");
+                return;
+        }
+
+        // Obtenir les octets individuels de x et y et les placer dans la trame
+        frame[4] = ((x >> 8) & 0xFF);
+        frame[5] = (x & 0xFF);
+        frame[6] = ((y >> 8) & 0xFF);
+        frame[7] = (y & 0xFF);
+        frame[8] = ((r >> 8) & 0xFF);
+        frame[9] = (r & 0xFF);
+
+        frame[14] = XOR_checksum(frame, frameLength);
+
+	for(int i = 0; i < frameLength; i++) {
+		printf("0x%0x ", frame[i]);
+	}
+
+        write(tty, frame, frameLength);
+}
+
 void wsDisplayText(int posx, int posy, char text[], int length)
 {
         // Vérifier limite de longueur
