@@ -1,6 +1,8 @@
 import Adafruit_BBIO.GPIO as GPIO
 import time
 
+infoPath = "/tmp/info-GPIO"
+
 # Variables globales pour l'état de chacun des boutons
 etatArriere = 0
 etatGo = 0
@@ -32,7 +34,8 @@ GPIO.add_event_detect(pinAvant,   GPIO.FALLING, callback=callbackBoutonAvant,   
 
 while True:
     for i in range(1000):
-        print("S{:04d}".format(i)+"Ar{}".format(etatArriere) +"Go{}".format(etatGo)+"Av{}".format(etatAvant))
+        with open(infoPath, 'w') as file:
+            file.write("S{:03d}".format(i)+"Ar{}".format(etatArriere) +"Go{}".format(etatGo)+"Av{}".format(etatAvant))
         etatArriere = 0
         etatGo = 0
         etatAvant = 0
