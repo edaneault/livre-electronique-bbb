@@ -143,10 +143,6 @@ void wsDrawCircle(int x, int y, int r)
 
         frame[14] = XOR_checksum(frame, frameLength);
 
-	for(int i = 0; i < frameLength; i++) {
-		printf("0x%0x ", frame[i]);
-	}
-
         write(tty, frame, frameLength);
 }
 
